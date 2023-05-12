@@ -22,7 +22,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 defaultConfig {
                     targetSdk =
                         libs.findVersion("androidTargetSdkVersions").get().toString().toInt()
-                    applicationId = "com.nanamare.movie"
+                    applicationId = "com.nanamare.starter"
                     versionCode = 1
                     versionName = "1.0"
                     testInstrumentationRunner = "com.nanamare.test_shared.StarterTestRunner"
