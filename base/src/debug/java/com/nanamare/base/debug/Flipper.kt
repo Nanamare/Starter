@@ -1,4 +1,4 @@
-package com.nanamare.debug
+package com.nanamare.base.debug
 
 import android.content.Context
 import com.facebook.flipper.android.AndroidFlipperClient
@@ -37,7 +37,7 @@ object Flipper {
                         context,
                         listOf(
                             SharedPreferencesFlipperPlugin.SharedPreferencesDescriptor(
-                                "preferences.starter",
+                                "preferences.movie",
                                 Context.MODE_PRIVATE
                             )
                         )

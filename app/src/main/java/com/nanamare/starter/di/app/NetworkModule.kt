@@ -2,12 +2,12 @@ package com.nanamare.starter.di.app
 
 import android.content.Context
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.nanamare.base.debug.Flipper
 import com.nanamare.base.util.NetworkConnection
 import com.nanamare.base.util.NetworkConnectionImpl
 import com.nanamare.data.BuildConfig
 import com.nanamare.data.source.remote.interceptor.AuthenticationInterceptor
 import com.nanamare.data.source.remote.interceptor.CacheInterceptor
-import com.nanamare.debug.Flipper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

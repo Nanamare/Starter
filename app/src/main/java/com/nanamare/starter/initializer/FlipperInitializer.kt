@@ -3,7 +3,7 @@ package com.nanamare.starter.initializer
 import android.content.Context
 import android.os.Build
 import androidx.startup.Initializer
-import com.nanamare.debug.Flipper
+import com.nanamare.base.debug.Flipper
 
 class FlipperInitializer : Initializer<Unit> {
 
