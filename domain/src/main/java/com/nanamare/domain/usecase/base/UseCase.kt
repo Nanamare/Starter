@@ -1,14 +1,17 @@
 package com.nanamare.domain.usecase.base
 
+import com.nanamare.domain.provider.Log
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
-import java.util.logging.Level
-import java.util.logging.Logger
+import javax.inject.Inject
 
 /**
  * Executes business logic synchronously or asynchronously using Coroutines.
  */
 abstract class UseCase<in P, R>(private val coroutineDispatcher: CoroutineDispatcher) {
+
+    @Inject
+    lateinit var log: Log
 
     /** Executes the use case asynchronously and returns a [Result].
      *
@@ -27,8 +30,7 @@ abstract class UseCase<in P, R>(private val coroutineDispatcher: CoroutineDispat
                 }
             }
         } catch (e: Exception) {
-            Logger.getLogger(UseCase::class.java.simpleName)
-                .log(Level.WARNING, "throw error", e)
+            log.e(e)
             Result.failure(e)
         }
     }
@@ -39,7 +41,4 @@ abstract class UseCase<in P, R>(private val coroutineDispatcher: CoroutineDispat
     @Throws(RuntimeException::class)
     protected abstract suspend fun execute(param: P): R
 
-    companion object {
-        val TAG: String = UseCase::class.java.simpleName
-    }
 }
