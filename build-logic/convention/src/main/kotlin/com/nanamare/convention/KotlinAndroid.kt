@@ -19,6 +19,9 @@ internal fun Project.configureKotlinAndroid(
     val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
     commonExtension.apply {
+        buildFeatures {
+            viewBinding = true
+        }
 
         compileSdk = libs.findVersion("androidCompileSdkVersion").get().toString().toInt()
 
